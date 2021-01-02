@@ -8,16 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    @ObservedObject var covidFetch = CovidFetchRequest()
-    
     var body: some View {
-        Text("\(covidFetch.totalData.confirmad)")
+        
+        TabView {
+            RecentView().tabItem {
+                Tab(imageName: "chart.bar")
+            }
+        }
+        .tag(0)
+        
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
+private struct Tab: View {
+    let imageName: String
+    
+    var body: some View {
+        VStack {
+            Image(systemName: imageName)
+        }
     }
 }

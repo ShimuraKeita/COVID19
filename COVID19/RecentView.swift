@@ -8,12 +8,16 @@
 import SwiftUI
 
 struct RecentView: View {
+    
+    @ObservedObject var covidFetch = CovidFetchRequest()
+    
     var body: some View {
-        
-        TabView {
-            
-        }
+        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-
+struct RecentView_Previews: PreviewProvider {
+    static var previews: some View {
+        RecentView()
+    }
+}
