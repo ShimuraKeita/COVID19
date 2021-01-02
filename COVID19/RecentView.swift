@@ -16,6 +16,7 @@ struct RecentView: View {
         
         NavigationView {
             VStack {
+                TatalDataView(totalData: covidFetch.totalData)
                 ListHeaderView()
                 
                 List {
