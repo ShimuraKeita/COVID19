@@ -20,7 +20,7 @@ class CountryStatisticsFetchRequest: ObservableObject {
     ]
     
     init() {
-        getStatsFor(country: "usa")
+        
     }
     
     func getStatsFor(country: String) {

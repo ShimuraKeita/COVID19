@@ -33,7 +33,7 @@ struct RecentView: View {
                     } , id: \.country) { countryData in
                         
                         NavigationLink(destination:
-                                        CountryDetailView(countryData: countryData)) {
+                                        CountryDetailView(countryName: countryData.country)) {
                             CountryDataRowView(countryData: countryData)
                         }
                     }

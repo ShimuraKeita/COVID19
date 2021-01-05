@@ -9,19 +9,34 @@ import SwiftUI
 
 struct CountryDetailView: View {
     
-    var countryData: CountryData
+    @ObservedObject var countryStatisticsRequest = CountryStatisticsFetchRequest()
+    
+    var countryName: String
     
     var body: some View {
         
         VStack {
             VStack {
-                CountryDetailRow(number: countryData.confirmad.formatNumber(), name: "確認済")
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.confirmadCases.formatNumber() ?? "Err", name: "確認済")
                     .padding(.top)
-                CountryDetailRow(number: countryData.critical.formatNumber(), name: "重傷者",color: .yellow)
-                CountryDetailRow(number: countryData.deaths.formatNumber(), name: "死亡者", color: .red)
-                CountryDetailRow(number: String(format: "%.2f", countryData.fatalityRate), name: "致死率 %", color: .red)
-                CountryDetailRow(number: countryData.recovered.formatNumber(), name: "回復者", color: .green)
-                CountryDetailRow(number: String(format: "%.2f", countryData.recovered), name: "回復率 %", color: .green)
+                
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.activeCases.formatNumber() ?? "Err", name: "現感染者")
+                
+                CountryDetailRow(number: "+" + (countryStatisticsRequest.detailedCountryData?.newCases.formatNumber() ?? "Err"), name: "新たに確認")
+                
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.recoveredCases.formatNumber() ?? "Err", name: "回復者", color: .green)
+                
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.criticalCases.formatNumber() ?? "Err", name: "重傷者", color: .yellow)
+                
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.deaths.formatNumber() ?? "Err", name: "死亡者", color: .red)
+                
+                CountryDetailRow(number: "+" + (countryStatisticsRequest.detailedCountryData?.newDeaths.formatNumber() ?? "Err"), name: "新たな死亡者", color: .red)
+                
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.testDone.formatNumber() ?? "Err", name: "Test Done", color: .yellow)
+                
+                CountryDetailRow(number: String(format: "%.2f", countryStatisticsRequest.detailedCountryData?.fatalityRate ?? 0.0) + "%" , name: "致死率", color: .red)
+                
+                CountryDetailRow(number: String(format: "%.2f", countryStatisticsRequest.detailedCountryData?.recoveredRate ?? 0.0) + "%" , name: "回復率", color: .green)
             }
             .background(Color("cardBackgroundGray"))
             .cornerRadius(8)
@@ -29,13 +44,15 @@ struct CountryDetailView: View {
             
             Spacer()
         }
-        .padding(.top, 50)
-        .navigationBarTitle(countryData.country)
+        .padding(.top, 25)
+        .navigationBarTitle(countryName)
+        .onAppear() {
+            self.getStatustucs()
+        }
     }
-}
-
-struct CountryDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        CountryDetailView(countryData: testCountryData)
+    
+    private func getStatustucs() {
+        print("sssssss")
+        countryStatisticsRequest.getStatsFor(country: self.countryName.replacingOccurrences(of: " ", with: "-"))
     }
 }
