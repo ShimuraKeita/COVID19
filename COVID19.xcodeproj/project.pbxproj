@@ -14,6 +14,7 @@
 		23A4A7DC25A4979000903D01 /* CountryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4A7DB25A4979000903D01 /* CountryDetailView.swift */; };
 		23A4A7E125A49CB600903D01 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4A7E025A49CB600903D01 /* MapView.swift */; };
 		23A4A7E925A4A20A00903D01 /* MapContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4A7E825A4A20A00903D01 /* MapContainerView.swift */; };
+		23A4A7EE25A4A80600903D01 /* CountryStatisticsFetchRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23A4A7ED25A4A80600903D01 /* CountryStatisticsFetchRequest.swift */; };
 		23F29DE425A1063E00E2AD3D /* COVID19App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F29DE325A1063E00E2AD3D /* COVID19App.swift */; };
 		23F29DE825A1064200E2AD3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F29DE725A1064200E2AD3D /* Assets.xcassets */; };
 		23F29DEB25A1064200E2AD3D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23F29DEA25A1064200E2AD3D /* Preview Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		23A4A7DB25A4979000903D01 /* CountryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailView.swift; sourceTree = "<group>"; };
 		23A4A7E025A49CB600903D01 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		23A4A7E825A4A20A00903D01 /* MapContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapContainerView.swift; sourceTree = "<group>"; };
+		23A4A7ED25A4A80600903D01 /* CountryStatisticsFetchRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStatisticsFetchRequest.swift; sourceTree = "<group>"; };
 		23F29DE025A1063E00E2AD3D /* COVID19.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = COVID19.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23F29DE325A1063E00E2AD3D /* COVID19App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = COVID19App.swift; sourceTree = "<group>"; };
 		23F29DE725A1064200E2AD3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -120,6 +122,8 @@
 		23A4A7B125A12B3D00903D01 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				23F29E2325A1078400E2AD3D /* CovidFetchRequest.swift */,
+				23A4A7ED25A4A80600903D01 /* CountryStatisticsFetchRequest.swift */,
 				23F29E3925A10A6900E2AD3D /* Model.swift */,
 			);
 			path = Model;
@@ -175,7 +179,7 @@
 			children = (
 				23F29E2E25A1092600E2AD3D /* ContentView.swift */,
 				23F29E4125A1189D00E2AD3D /* RecentView.swift */,
-				23F29E2325A1078400E2AD3D /* CovidFetchRequest.swift */,
+				23A4A7E825A4A20A00903D01 /* MapContainerView.swift */,
 				23A4A7B325A12B5B00903D01 /* View */,
 				23A4A7B225A12B4B00903D01 /* Extension */,
 				23A4A7B125A12B3D00903D01 /* Model */,
@@ -185,7 +189,6 @@
 				23F29DF125A1064200E2AD3D /* Info.plist */,
 				23F29DEE25A1064200E2AD3D /* COVID19.xcdatamodeld */,
 				23F29DE925A1064200E2AD3D /* Preview Content */,
-				23A4A7E825A4A20A00903D01 /* MapContainerView.swift */,
 			);
 			path = COVID19;
 			sourceTree = "<group>";
@@ -476,6 +479,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				23A4A7EE25A4A80600903D01 /* CountryStatisticsFetchRequest.swift in Sources */,
 				23A4A7CC25A4967900903D01 /* CountryDetailRow.swift in Sources */,
 				23A4A7E125A49CB600903D01 /* MapView.swift in Sources */,
 				23F29E2425A1078400E2AD3D /* CovidFetchRequest.swift in Sources */,
