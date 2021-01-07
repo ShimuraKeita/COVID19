@@ -20,8 +20,8 @@ struct MapView: UIViewRepresentable {
         for data in countryData {
             
             let title = data.country
-                + "\n 確認済" + data.confirmad.formatNumber()
-                + "\n 死者" + data.deaths.formatNumber()
+                + "\n 確認者数" + "_" + data.confirmad.formatNumber() + "人"
+                + "\n 死者数" + "_" + data.deaths.formatNumber() + "人"
             
             let coodinate = CLLocationCoordinate2D(latitude: data.latitude, longitude: data.longitude)
             
