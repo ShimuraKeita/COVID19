@@ -52,6 +52,7 @@ struct RecentView: View {
                                         Image(systemName: "magnifyingglass")
                                     }))
         }
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }
 
