@@ -39,6 +39,7 @@ struct RecentView: View {
                     }
                 }
             }
+            .listStyle(PlainListStyle())
             .navigationBarTitle("データ", displayMode: .inline)
             .navigationBarItems(trailing:
                                     Button(action: {

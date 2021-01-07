@@ -18,37 +18,38 @@ struct CountryDataRowView: View {
                 .fontWeight(.medium)
                 .font(.subheadline)
                 .lineLimit(2)
-                .frame(width: 100, alignment: .leading)
+                .frame(width: 60, alignment: .leading)
             
             Spacer()
             
-            Text(countryData.confirmad.formatNumber())
+            Text(countryData.confirmad.formatNumber() + "人")
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
                 .font(.subheadline)
+                .frame(width: 70, height: 40, alignment: .center)
                 .frame(height: 40)
                 .padding(.leading, 5)
             
             Spacer()
             
-            Text(countryData.deaths.formatNumber())
+            Text(countryData.deaths.formatNumber() + "人")
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
-                .frame(width: 50, height: 40, alignment: .center)
+                .frame(width: 70, height: 40, alignment: .center)
                 .font(.subheadline)
                 .foregroundColor(.red)
                 .padding(.leading, 5)
             
             Spacer()
             
-            Text(countryData.recovered.formatNumber())
+            Text(countryData.recovered.formatNumber() + "人")
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
-                .frame(width: 50, height: 40, alignment: .center)
+                .frame(width: 70, height: 40, alignment: .center)
                 .font(.subheadline)
                 .foregroundColor(.green)
         }
-        .background(Color.gray)
+        .background(Color("cardBackgroundGray"))
     }
 }
 
