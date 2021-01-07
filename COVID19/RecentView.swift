@@ -39,7 +39,7 @@ struct RecentView: View {
                     }
                 }
             }
-            .navigationBarTitle("最近のデータ", displayMode: .inline)
+            .navigationBarTitle("データ", displayMode: .inline)
             .navigationBarItems(trailing:
                                     Button(action: {
                                         self.isSearchVisible.toggle()

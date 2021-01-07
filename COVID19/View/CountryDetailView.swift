@@ -17,7 +17,7 @@ struct CountryDetailView: View {
         
         VStack {
             VStack {
-                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.confirmadCases.formatNumber() ?? "Err", name: "確認済")
+                CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.confirmadCases.formatNumber() ?? "Err", name: "確認者数")
                     .padding(.top)
                 
                 CountryDetailRow(number: countryStatisticsRequest.detailedCountryData?.activeCases.formatNumber() ?? "Err", name: "現感染者")

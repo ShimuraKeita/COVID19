@@ -9,20 +9,20 @@ import SwiftUI
 
 struct TotalDataCard: View {
     
-    var number: String = "Err"
     var name: String = "Confirmad"
+    var number: String = "Err"
     var color: Color = .primary
     
     var body: some View {
         
         GeometryReader {geometry in
             VStack {
-                Text(self.number)
-                    .font(.subheadline)
-                    .padding(5)
-                    .foregroundColor(self.color)
                 Text(self.name)
                     .font(.body)
+                    .padding(5)
+                    .foregroundColor(self.color)
+                Text(self.number)
+                    .font(.subheadline)
                     .padding(5)
                     .foregroundColor(self.color)
             }

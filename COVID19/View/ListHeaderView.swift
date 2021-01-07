@@ -15,11 +15,11 @@ struct ListHeaderView: View {
                 .fontWeight(.bold)
                 .font(.subheadline)
                 .frame(width: 100, alignment: .leading)
-                .padding(.leading, 15)
+                .padding(.leading, 30)
             
             Spacer()
             
-            Text("構成")
+            Text("確認者数")
                 .fontWeight(.bold)
                 .font(.subheadline)
                 .frame(height: 40)
@@ -27,7 +27,7 @@ struct ListHeaderView: View {
             
             Spacer()
             
-            Text("死者")
+            Text("死者数")
                 .fontWeight(.bold)
                 .font(.subheadline)
                 .frame(height: 40)
@@ -35,11 +35,11 @@ struct ListHeaderView: View {
             
             Spacer()
             
-            Text("回復")
+            Text("回復者数")
                 .fontWeight(.bold)
                 .font(.subheadline)
                 .frame(height: 40)
-                .padding(.trailing, 15)
+                .padding(.trailing, 30)
         }
         .background(Color.gray)
     }

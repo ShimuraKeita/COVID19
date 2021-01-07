@@ -15,15 +15,16 @@ struct TatalDataView: View {
         
         VStack {
             HStack {
-                TotalDataCard(number: totalData.confirmad.formatNumber(), name: "確認")
-                TotalDataCard(number: totalData.critical.formatNumber(), name: "重傷",color: .yellow)
-                TotalDataCard(number: totalData.deaths.formatNumber(), name: "死者", color: .red)
+                TotalDataCard(name: "確認者数", number: totalData.confirmad.formatNumber() + "人")
+                TotalDataCard(name: "死者", number: totalData.deaths.formatNumber() + "人", color: .red)
+                TotalDataCard(name: "回復者数", number: totalData.recovered.formatNumber() + "人",color: .green)
             }
             
             HStack {
-                TotalDataCard(number: String(format: "%.2f", totalData.fatalityRate), name: "致死率 %", color: .red)
-                TotalDataCard(number: totalData.recovered.formatNumber(), name: "回復",color: .green)
-                TotalDataCard(number: String(format: "%.2f", totalData.recoveredRate), name: "回復率 %", color: .green)
+                TotalDataCard(name: "重傷者", number: totalData.critical.formatNumber() + "人",color: .yellow)
+                TotalDataCard(name: "致死率", number: String(format: "%.2f", totalData.fatalityRate) + "%", color: .red)
+                
+                TotalDataCard(name: "回復率", number: String(format: "%.2f", totalData.recoveredRate) + "%", color: .green)
             }
         }
         .frame(height: 170)
