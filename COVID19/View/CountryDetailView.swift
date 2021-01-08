@@ -31,7 +31,7 @@ struct CountryDetailView: View {
                 
                 CountryDetailRow(number: "+" + (countryStatisticsRequest.detailedCountryData?.newDeaths.formatNumber() ?? "Err") + "人", name: "新たな死亡者", color: .red)
                 
-                CountryDetailRow(number: (countryStatisticsRequest.detailedCountryData?.testDone.formatNumber() ?? "Err") + "人", name: "検査数数", color: .yellow)
+                CountryDetailRow(number: (countryStatisticsRequest.detailedCountryData?.testDone.formatNumber() ?? "Err") + "人", name: "検査数", color: .yellow)
                 
                 CountryDetailRow(number: String(format: "%.2f", countryStatisticsRequest.detailedCountryData?.fatalityRate ?? 0.0) + "%" , name: "致死率", color: .red)
                 
@@ -50,7 +50,6 @@ struct CountryDetailView: View {
     }
     
     private func getStatustucs() {
-        print("sssssss")
         countryStatisticsRequest.getStatsFor(country: self.countryName.replacingOccurrences(of: " ", with: "-"))
     }
 }
